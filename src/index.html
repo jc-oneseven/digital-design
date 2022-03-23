@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="theme--default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Digital Design - HTML Practical</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header--wrapper">
+                <div class="brand-logo-wrapper">
+                    <a href="#">
+                        <img class="brand-logo" src="<%= require('./assets/image/Logo.png') %>"
+                            alt="Brand Logo - Digiral Design">
+                    </a>
+                </div>
+                <input type="checkbox" name="mobile-menu" id="mobile-menu-checkbox">
+                <nav class="header--menu js-menu">
+                    <ul>
+                        <li class="menu-item"><a href="/"> Home </a></li>
+                        <li class="menu-item"><a href="#aboutus"> About Us </a></li>
+                        <li class="menu-item has-sub-menu ">
+                            <a class="js-has-sub-menu" href="#services"> Services <span
+                                    class="js-sub-menu-opener icon fa fa-angle-down"></span> </a>
+                            <!-- Sub Menu -->
+                            <nav class="sub-menu js-sub-menu">
+                                <ul>
+                                    <li class="menu-item"><a href="#"> Services One </a></li>
+                                    <li class="menu-item"><a href="#"> Services Two </a></li>
+                                    <li class="menu-item"><a href="#"> Services Three </a></li>
+                                </ul>
+                            </nav>
+                            <!-- End Sub Menu -->
+                        </li>
+                        <li class="menu-item"><a href="#brandPartners"> Partners </a></li>
+                        <li class="menu-item"><a href="#media"> Media </a></li>
+                    </ul>
+                </nav>
+                <a href="#inquiryForm" class="header--cta button button-primary"> Contact Us </a>
+                <label for="mobile-menu-checkbox" class="btn-menu-hamburger"> <span class="fa fa-bars"></span> </label>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Section: Hero -->
+    <section class="hero">
+        <div class="hero--slider">
+            <div class="hero--slider--item js-slider fade">
+                <div class="container slider-content">
+                    <h2 class="slider-item-title">Lorem ipsum 01 </h2>
+                    <p class="slider-item-desc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                </div>
+                <picture>
+                    <source type="image/webp" srcset="<%= require('./assets/image/banner_1.webp') %>">
+                    <source type="image/jpg" srcset="<%= require('./assets/image/banner_1.jpg') %>">
+                    <img src="<%= require('./assets/image/banner_1.jpg') %>" alt="Slider 1 Banner">
+                </picture>
+
+                <!-- <img src="<%= require('./assets/image/banner_1.jpg') %>"  alt="Slider 3 Banner"> -->
+            </div>
+            <div class="hero--slider--item js-slider fade">
+                <div class="container slider-content">
+                    <h2 class="slider-item-title">Lorem ipsum 02 </h2>
+                    <p class="slider-item-desc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                </div>
+                <picture>
+                    <source type="image/webp" srcset="<%= require('./assets/image/banner_2.webp') %>">
+                    <source type="image/jpg" srcset="<%= require('./assets/image/banner_2.jpg') %>">
+                    <img src="<%= require('./assets/image/banner_2.jpg') %>" alt="Slider 2 Banner">
+                </picture>
+            </div>
+            <div class="hero--slider--item js-slider fade">
+                <div class="container slider-content">
+                    <h2 class="slider-item-title">Lorem ipsum 03 </h2>
+                    <p class="slider-item-desc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                </div>
+                <picture>
+                    <source type="image/webp" srcset="<%= require('./assets/image/banner_3.webp') %>">
+                    <source type="image/jpg" srcset="<%= require('./assets/image/banner_3.jpg') %>">
+                    <img src="<%= require('./assets/image/banner_3.jpg') %>" loading="lazy" alt="Slider 3 Banner">
+                </picture>
+            </div>
+        </div>
+        <div class="indicators js-indicators">
+            <button class="btn-prev" title="Previous Slide"> Prev </button>
+            <span class="indicator js-indicator" data-item="1" title="Jump to slide 1"></span>
+            <span class="indicator js-indicator" data-item="2" title="Jump to slide 2"></span>
+            <span class="indicator js-indicator" data-item="3" title="Jump to slide 3"></span>
+            <button class="btn-next" title="Next Slide"> Next </button>
+        </div>
+    </section>
+    <!-- End Section: Hero -->
+
+    <!-- Section: Reject Project -->
+    <section class="section">
+        <div class="container">
+            <header class="section--header">
+                <h2 class="section--header--title"> Most Recent Projects </h2>
+            </header>
+            <div class="ection--content projects">
+                <div class="projects--item __item1">
+                    <figure>
+                        <picture>
+                            <source type="image/webp" srcset="<%= require('./assets/image/project_img_1.webp') %>">
+                            <source type="image/jpg" srcset="<%= require('./assets/image/project_img_1.jpg') %>">
+                            <img src="<%= require('./assets/image/project_img_1.jpg') %>" loading="lazy"
+                                alt="Project 01">
+                        </picture>
+                    </figure>
+                    <div class="project--content">
+                        <span class="fa fa-user"></span>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="projects--item __item2">
+                    <figure>
+                        <picture>
+                            <source type="image/webp" srcset="<%= require('./assets/image/project_img_2.webp') %>">
+                            <source type="image/jpg" srcset="<%= require('./assets/image/project_img_2.jpg') %>">
+                            <img src="<%= require('./assets/image/project_img_2.jpg') %>" loading="lazy"
+                                alt="Project 02">
+                        </picture>
+                    </figure>
+                    <div class="project--content">
+                        <span class="fa fa-at"></span>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="projects--item __item3">
+                    <figure>
+                        <picture>
+                            <source type="image/webp" srcset="<%= require('./assets/image/project_img_3.webp') %>">
+                            <source type="image/jpg" srcset="<%= require('./assets/image/project_img_3.jpg') %>">
+                            <img src="<%= require('./assets/image/project_img_3.jpg') %>" loading="lazy"
+                                alt="Project 03">
+                        </picture>
+                    </figure>
+                    <div class="project--content">
+                        <span class="fa fa-map-marker"></span>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+                <div class="projects--item __item4">
+                    <figure>
+                        <picture>
+                            <source type="image/webp" srcset="<%= require('./assets/image/project_img_4.webp') %>">
+                            <source type="image/jpg" srcset="<%= require('./assets/image/project_img_4.jpg') %>">
+                            <img src="<%= require('./assets/image/project_img_4.jpg') %>" loading="lazy"
+                                alt="Project 04">
+                        </picture>
+                    </figure>
+                    <div class="project--content">
+                        <span class="fa fa-gear"></span>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section: Reject Project -->
+    <!-- Section: brand/partner -->
+    <section id="brandPartners" class="section brand-partner">
+        <div class="container">
+            <header class="section--header">
+                <nav class="section--header--title js-tab">
+                    <button class="btn-tab active" data-for="brands"> Brands </button>
+                    <button class="btn-tab" data-for="partners"> Partners </button>
+                </nav>
+            </header>
+            <div class="section-content">
+                <div id="brands" class="active brands-partners-list js-tab-content fade">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/brand_1.png') %>" loading="lazy"
+                        alt="Brand 1 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/brand_2.png') %>" loading="lazy"
+                        alt="Brand 2 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/brand_3.png') %>" loading="lazy"
+                        alt="Brand 3 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/brand_4.png') %>" loading="lazy"
+                        alt="Brand 4 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/brand_5.png') %>" loading="lazy"
+                        alt="Brand 5 Logo">
+                </div>
+                <div id="partners" class="brands-partners-list js-tab-content fade">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/partner_1.png') %>" loading="lazy"
+                        alt="Partner 1 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/partner_2.png') %>" loading="lazy"
+                        alt="Partner 2 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/partner_3.png') %>" loading="lazy"
+                        alt="Partner 3 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/partner_4.png') %>" loading="lazy"
+                        alt="Partner 4 Logo">
+                    <img class="brand-partner-item" src="<%= require('./assets/image/partner_5.png') %>" loading="lazy"
+                        alt="Partner 5 Logo">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end Section: brand/partner -->
+
+    <!-- Section: Contact Form -->
+    <section id="inquiryForm" class="section inquiry-form">
+        <div class="container container-md">
+            <header class="section--header">
+                <h2 class="section--header--title">Inquiry Form </h2>
+            </header>
+            <div class="section-content">
+                <form class="form">
+                    <div class="form-field">
+                        <input required class="form-control" pattern="[a-zA-z]{1,}" id="fullName" type="text">
+                        <label class="form-control-label"
+                            title="Please enter only alphabets and Enter at least 2 letters" for="fullName"> Full Name
+                            <span class="mendate">*</span>
+                        </label>
+                    </div>
+                    <div class="form-field">
+                        <input required class="form-control" type="email" id="email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <label class="form-control-label" for="email"> Email Addess <span
+                                class="mendate">*</span></label>
+                    </div>
+                    <div class="form-field">
+                        <input autocomplete="on" required class="form-control" type="password" id="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <label class="form-control-label" for="password"> Password <span
+                                class="mendate">*</span></label>
+                        <div class="hint"> 8 digit password with must use of some special characters such as ~!@#$%^&*_
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <input autocomplete="on" required class="form-control" type="password" id="confirmPassword">
+                        <label class="form-control-label" for="confirmPassword"> Confirm Password <span
+                                class="mendate">*</span></label>
+                    </div>
+                    <div class="form-field grid-col-span-2">
+                        <textarea required class="form-control" name="comment" id="comment" cols="30"
+                            rows="3"></textarea>
+                        <label class="form-control-label" for="comment"> Comment <span class="mendate">*</span> </label>
+                    </div>
+                    <div class="form-submit-field grid-col-span-2">
+                        <button type="submit" class="button button-submit js-btn-submit"> Submit </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End Section: Contact Form -->
+
+    <!-- Section: Footer -->
+    <footer class="section footer">
+        <div class="container">
+
+            <div class="section-content">
+                <nav>
+                    <ul class="quicklinks">
+                        <li> <a class="link-item" href="#"> Home </a></li>
+                        <li> <a class="link-item" href="#"> About Us </a></li>
+                        <li> <a class="link-item" href="#"> Projects </a></li>
+                        <li> <a class="link-item" href="#"> Brands </a></li>
+                        <li> <a class="link-item" href="#"> Products </a></li>
+                        <li> <a class="link-item" href="#"> Services </a></li>
+                        <li> <a class="link-item" href="#"> Partners </a></li>
+                        <li> <a class="link-item" href="#"> Clients </a></li>
+                    </ul>
+                </nav>
+
+                <div class="contact-info">
+                    <div>
+                        <span class="icon fa fa-envelope-o"></span>
+                        <span> <a class="link-item" href="mailto:info@csts.com"> info@website.com </a> </span>
+                    </div>
+                    <div>
+                        <span class="icon fa fa-phone"></span>
+                        <span> <a class="link-item" href="tel:+919898912345"> +91 9898812345 </a> </span>
+                    </div>
+                    <ul class="social-links">
+                        <li> <a href="#"> <span class="icon fa fa-facebook"></span> </a> </li>
+                        <li> <a href="#"> <span class="icon fa fa-twitter"></span> </a> </li>
+                        <li> <a href="#"> <span class="icon fa fa-linkedin"></span> </a> </li>
+                        <li> <a href="#"> <span class="icon fa fa-youtube"></span> </a> </li>
+                        <li> <a href="#"> <span class="icon fa fa-instagram"></span> </a> </li>
+                    </ul>
+                </div>
+
+                <div class="copyright">
+                    <ul class="copyright--items">
+                        <li> <a href="#"> Terms and Condition </a> </li>
+                        <li> <a href="#"> Privacy Policy </a> </li>
+                        <li> Copyright © 2020 - CSTS Co. LLC </li>
+
+                    </ul>
+                    <div class="brand-logo-wrapper"><a href="#">
+                            <img class="brand-logo" src="<%= require('./assets/image/Logo.png') %>" loading="lazy"
+                                alt="Brand Logo - Digiral Design">
+                        </a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Section: Footer -->
+
+    <!-- Theme Swticher -->
+    <button class="theme-switcher">
+        <span class="icon-setting fa fa-gear"></span>
+        <span class="icon-theme-dark fa fa-moon-o"></span>
+        <span class="icon-theme-light fa fa-sun-o"></span> 
+        <span class="btn-label"> Change Theme </span>
+    </button>
+    <!-- End Theme Swticher -->
+
+</body>
+
+</html>

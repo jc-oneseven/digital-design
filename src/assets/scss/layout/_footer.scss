@@ -1,0 +1,77 @@
+.footer {
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    @include for-size(map-get($breakpoints, $md)) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  .quicklinks {
+    display: grid;
+    gap: 1em 2em;
+    grid-template-columns: 1fr 1fr;
+    .link-item {
+      @include themed() {
+        color: t(text);
+      }
+      font-size: 0.85rem;
+    }
+    @include for-size(map-get($breakpoints, $md)) {
+    }
+  }
+  .contact-info {
+    display: grid;
+    gap: 0.5em 0;
+    .icon {
+      color: $secondary;
+      margin-right: 0.5rem;
+    }
+    .link-item {
+      @include themed() {
+        color: t(text);
+      }
+      font-weight: bold;
+    }
+  }
+  .social-links {
+    padding-top: 1em;
+    border-top: 1px solid $grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    @include themed() {
+      color: t(text);
+    }
+    @include for-size(map-get($breakpoints, $md)) {
+      justify-content: flex-start;
+    }
+  }
+  .copyright {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    @include for-size(map-get($breakpoints, $md)) {
+      width: 100%;
+    }
+    &--items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      @include themed() {
+        color: t(text);
+      }
+      a {
+        &::after {
+          content: "|";
+          padding-left: 0.5em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.brand-partner {
+  .section--header {
+    @include themed() {
+      border-bottom: 1px solid t(border);
+    }
+  }
+  .btn-tab {
+    cursor: pointer;
+    font-weight: bold;
+    @include themed() {
+      color: t(text);
+    }
+    &.active {
+      position: relative;
+      color: $secondary;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1.8rem;
+        left: 50%;
+        background-color: $secondary;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .brands-partners-list {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em 3em;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s;
+    display: none;
+    .brand-partner-item {
+      width: 130px;
+      max-height: 80px;
+      object-fit: contain;
+      filter: grayscale(0.8);
+      transition: all 0.2s;
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+    &.active {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

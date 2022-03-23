@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$font-family: "SourceSansPro" !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+/// Breakpoints map
+$sm: "small";
+$md: "medium";
+$lg: "large";
+$xl: "extra-large";
+$xxl: "extra-extra-large";
+
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  $sm: 576px,
+  $md: 768px,
+  $lg: 992px,
+  $xl: 1200px,
+  $xxl: 1400px,
+) !default;
+
+$header-height: 80px;

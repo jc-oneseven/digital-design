@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@font-face {
+  font-family: $font-family;
+  src: url("../fonts/SourceSansPro-ExtraLight.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("../fonts/SourceSansPro-Regular.otf");
+}
+@font-face {
+  font-family: $font-family;
+  src: url("../fonts/SourceSansPro-Bold.otf");
+  font-weight: bold;
+}
+
+// Font Awesome
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";

@@ -1,0 +1,20 @@
+.button {
+  padding: 0.5rem 0.85rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  @include for-size(map-get($breakpoints, $md)) {
+    padding: 0.65rem 1.5rem;
+  }
+
+  &-primary {
+    background-color: $primary;
+    color: white;
+  }
+
+  &-submit {
+    text-transform: uppercase;
+    background-color: $secondary;
+    color: #ffffff;
+  }
+}

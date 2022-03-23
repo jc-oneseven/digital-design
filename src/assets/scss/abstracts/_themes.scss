@@ -1,0 +1,123 @@
+$themes: (
+  default: (
+    body-bg: #ffffff,
+    header-bg: rgba(255, 255, 255, 0.5),
+    header-shadow: -1px 6px 25px -1px rgba(133, 132, 132, 0.44),
+    footer-bg: $primary,
+    footer-bg-img: url("../image/footer_curve.svg"),
+    primary: $primary,
+    secondary: $secondary,
+    text: $dark-grey,
+    hover: $primary,
+    border: $grey,
+    theme-switch-bg: #e7e9e8,
+    theme-switch-text: $primary,
+    theme-switch-shadow1: -5px -2px 16px #a7a7a7,
+    theme-switch-shadow2: -1px -1px 6px #fff,
+  ),
+  dark: (
+    body-bg: #0b1f19,
+    header-bg: rgba(11, 31, 25, 0.7),
+    header-shadow: -1px 6px 25px -1px hsl(0deg 0% 0% / 8%),
+    footer-bg: #122922,
+    footer-bg-img: url("../image/footer_curve-dark.svg"),
+    primary: $primary,
+    secondary: $secondary,
+    text: #ffffff,
+    hover: $primary,
+    border: $dark-grey,
+    theme-switch-bg: #122e25,
+    theme-switch-text: #ffffff,
+    theme-switch-shadow1: -2px 4px 16px #071410,
+    theme-switch-shadow2: -1px 1px 8px #0f2a22,
+  ),
+);
+
+$theme-map: null;
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      transition: all 0.4s;
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+.theme-switcher {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  z-index: 99;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  overflow: hidden;
+  @include themed() {
+    background: t(theme-switch-bg);
+    color: t(theme-switch-text);
+    box-shadow: t(theme-switch-shadow1), t(theme-switch-shadow2);
+  }
+  &:hover {
+    width: 150px;
+    .icon-setting {
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    .icon-theme-dark {
+      .theme--default & {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .icon-theme-light {
+      .theme--dark & {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .btn-label {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .icon-setting {
+    transition: all 0.4s;
+  }
+
+  .icon-theme-light,
+  .icon-theme-dark {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .btn-label {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s;
+    white-space: nowrap;
+    font-size: 0.75em;
+  }
+}

@@ -1,0 +1,13 @@
+.section {
+  margin-bottom: 2em;
+  &--header {
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 1em;
+    &--title {
+      font-size: 2rem;
+      color: $secondary;
+      margin: 0;
+    }
+  }
+}

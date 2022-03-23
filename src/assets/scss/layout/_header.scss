@@ -1,0 +1,208 @@
+.brand-logo-wrapper {
+  height: max(30px, 3.5vw);
+  flex-shrink: 0;
+  .brand-logo {
+    height: 100%;
+  }
+}
+.header {
+  @include themed() {
+    background-color: t(header-bg);
+    box-shadow: t(header-shadow);
+    -webkit-box-shadow: t(header-shadow);
+    -moz-box-shadow: t(header-shadow);
+  }
+
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  &--wrapper {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+  }
+  #mobile-menu-checkbox {
+    display: none;
+    &:checked {
+      & + .header--menu {
+        // display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  }
+  &--menu {
+    height: calc(100vh - $header-height);
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include themed() {
+      background-color: t(body-bg);
+      border-top: 1px solid t(border);
+    }
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px) scale(1.01);
+    transition: all 0.4s;
+
+    ul {
+      padding: 2em 1em;
+      .menu-item {
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1em;
+          font-size: 0.95rem;
+          font-weight: bold;
+
+          text-decoration: none;
+          @include themed() {
+            color: t(text);
+          }
+          .icon {
+            margin-left: 10px;
+            font-size: 1.3rem;
+          }
+          @include on-event() {
+            @include themed() {
+              color: t(primary);
+            }
+          }
+        }
+        &.show {
+          @include themed() {
+            background-color: darken(t(body-bg), 5);
+          }
+          border-radius: 4px;
+          .sub-menu {
+            padding-left: 1em;
+            display: block;
+          }
+        }
+      }
+      .sub-menu {
+        display: none;
+        ul {
+          padding: 0;
+        }
+      }
+    }
+
+    @include for-size(map-get($breakpoints, $md)) {
+      @include themed() {
+        border: transparent;
+        background-color: transparent;
+      }
+      position: relative;
+      top: 0;
+
+      margin-left: auto;
+      display: flex;
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      ul,
+      .menu-item,
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      ul {
+        padding: 0;
+        gap: 0 2rem;
+
+        .menu-item {
+          border-bottom: 4px solid transparent;
+          transition: all 0.4s;
+          a {
+            padding: 0;
+          }
+          &:hover {
+            border-bottom-color: $primary;
+          }
+
+          &.active {
+            color: $primary;
+            border-bottom-color: $primary;
+          }
+
+          &:hover {
+            & .sub-menu {
+              visibility: visible;
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .sub-menu {
+            display: block;
+            position: absolute;
+            top: $header-height;
+            @include themed() {
+              background-color: t(body-bg);
+            }
+
+            box-shadow: -1px 6px 25px -1px rgba(133, 132, 132, 0.44);
+            -webkit-box-shadow: -1px 6px 25px -1px rgba(133, 132, 132, 0.44);
+            -moz-box-shadow: -1px 6px 25px -1px rgba(133, 132, 132, 0.44);
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.2s;
+            ul,
+            li {
+              display: block;
+
+              .menu-item {
+                &:hover {
+                  border-bottom-color: transparent;
+                }
+                a {
+                  display: block;
+                  padding: 1em 2em;
+                  font-weight: normal;
+                  @include on-event() {
+                    color: $secondary;
+                    background-color: rgba($color: $secondary, $alpha: 0.1);
+                  }
+                }
+              }
+            }
+          }
+          &.show {
+            @include themed() {
+              background-color: transparent;
+            }
+            border-radius: 0;
+            .sub-menu {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .header--cta {
+    margin-left: auto;
+    @include for-size(map-get($breakpoints, $md)) {
+      margin-left: 2em;
+    }
+  }
+  .btn-menu-hamburger {
+    display: block;
+    margin-left: 0.3em;
+    cursor: pointer;
+    @include for-size(map-get($breakpoints, $md)) {
+      display: none;
+    }
+  }
+}
